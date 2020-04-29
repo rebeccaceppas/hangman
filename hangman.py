@@ -27,7 +27,7 @@ def game(word):
         if (letter.isalpha()) & (letter.upper() in list(word)):
             if letter.upper() in progress:
                 print('You already guessed ' + letter.upper())
-                print('You still have ' + chances + ' guesses left')
+                print('You still have ' + str(chances) + ' guesses left')
             else:
                 progress.append(letter.upper())
                 for n, i in enumerate(list(word)):
@@ -39,19 +39,19 @@ def game(word):
                 if '_' not in hidden:
                     win == True
                 else:
-                    print('You still have ' + chances + ' guesses left')
+                    print('You still have ' + str(chances) + ' guesses left')
                 
             
         elif (letter.isalpha()) & (letter.upper() not in list(word)):
             if letter.upper() in mistakes:
                 print('You already guessed ' + letter.upper())
-                print('You still have ' + chances + ' guesses left')
+                print('You still have ' + str(chances) + ' guesses left')
             else:
                 mistakes.append(letter.upper())
                 print(''.join(hidden))
                 print('Sorry, ' + letter.upper() + ' is not in the word. Try again.')
                 chances -= 1
-                print('You now have ' + chances + ' guesses left')
+                print('You now have ' + str(chances) + ' guesses left')
             
         else:
             print('Your input is invalid, try again.')
