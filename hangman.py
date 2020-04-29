@@ -66,8 +66,8 @@ if answer.upper() == 'Y':
 else:
     print('See you next time')
 
-repeat = input('Do you want to play again? (Y/N')
-if repeat.upper() == 'Y':
-    game(word)
-else:
+def repeat():
+    repeat = input('Do you want to play again? (Y/N')
+    while repeat.upper() == 'Y':
+        game(word)
     print('See you next time')
