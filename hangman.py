@@ -11,15 +11,16 @@ def game(word):
     word = random.choice(words)
 
     print('Okay, this is your word!')
+    
     chances = 10
     progress = []
     mistakes = []
     hidden = list('_'*len(word))
-    
-    
+    win = False
+     
     print(''.join(hidden))
     
-    while (chances > 0):
+    while (chances > 0) & (not win):
 
         letter = input('Choose a letter \n')
         
@@ -34,7 +35,11 @@ def game(word):
                         hidden[n] = letter.upper()
                 print(''.join(hidden))
                 print('Good job! ' + letter.upper() + ' is in the word.')
-                print('You still have ' + chances + ' guesses left')
+
+                if '_' not in hidden:
+                    win == True
+                else:
+                    print('You still have ' + chances + ' guesses left')
                 
             
         elif (letter.isalpha()) & (letter.upper() not in list(word)):
