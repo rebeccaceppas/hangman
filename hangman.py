@@ -37,7 +37,8 @@ def game(word):
                 print('Good job! ' + letter.upper() + ' is in the word.')
 
                 if '_' not in hidden:
-                    win == True
+                    win = True
+                    print('You won!')
                 else:
                     print('You still have ' + str(chances) + ' guesses left')
                 
