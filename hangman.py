@@ -34,12 +34,12 @@ def game(word):
                     if i == letter.upper():
                         hidden[n] = letter.upper()
                 print(''.join(hidden))
-                print('Good job! ' + letter.upper() + ' is in the word.')
 
                 if '_' not in hidden:
                     win = True
                     print('You won!')
                 else:
+                    print('Good job! ' + letter.upper() + ' is in the word.')
                     print('You still have ' + str(chances) + ' guesses left')
                 
             
@@ -56,6 +56,9 @@ def game(word):
             
         else:
             print('Your input is invalid, try again.')
+
+    if not win:
+        print('You lost!')
 
 answer = input('Do you want to play Hangman? (Y/N)')
 if answer.upper() == 'Y':
