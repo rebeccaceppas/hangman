@@ -56,3 +56,9 @@ if answer.upper() == 'Y':
     game(word)
 else:
     print('See you next time')
+
+repeat = input('Do you want to play again? (Y/N')
+if repeat.upper() == 'Y':
+    game(word)
+else:
+    print('See you next time')
