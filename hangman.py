@@ -28,6 +28,7 @@ def game(word):
             if letter.upper() in progress:
                 print('You already guessed ' + letter.upper())
                 print('You still have ' + str(chances) + ' guesses left')
+                print(''.join(hidden))
             else:
                 progress.append(letter.upper())
                 for n, i in enumerate(list(word)):
@@ -60,14 +61,15 @@ def game(word):
     if not win:
         print('You lost!')
 
+    repeat = input('Do you want to play again? (Y/N)')
+    if repeat.upper() == 'Y':
+        game(word)
+    else:
+        print('See you next time')
+
+
 answer = input('Do you want to play Hangman? (Y/N)')
 if answer.upper() == 'Y':
     game(word)
 else:
-    print('See you next time')
-
-def repeat():
-    repeat = input('Do you want to play again? (Y/N')
-    while repeat.upper() == 'Y':
-        game(word)
     print('See you next time')
