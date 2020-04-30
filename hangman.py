@@ -59,7 +59,7 @@ def game(word):
             print('Your input is invalid, try again.')
 
     if not win:
-        print('You lost!')
+        print('You lost! The word was: ' + word )
 
     repeat = input('Do you want to play again? (Y/N)')
     if repeat.upper() == 'Y':
