@@ -33,6 +33,13 @@ def draw_hangman(errors):
     print(output)
 
 
+def single(num):
+    if num == 1:
+        print('You have 1 guess left \n')
+    else:
+        print('You have ' + str(num) + ' guesses left \n')
+
+
 def game(word):
     
     
@@ -57,7 +64,7 @@ def game(word):
             if letter.upper() in progress:
                 draw_hangman(len(mistakes))
                 print('You already guessed ' + letter.upper())
-                print('You still have ' + str(chances) + ' guesses left \n')
+                single(chances)
                 print('\n'+''.join(hidden)+'\n')
             else:
                 progress.append(letter.upper())
@@ -72,21 +79,21 @@ def game(word):
                     print('You won!')
                 else:
                     print('Good job! ' + letter.upper() + ' is in the word.')
-                    print('You still have ' + str(chances) + ' guesses left \n')
+                    single(chances)
                 
             
         elif (letter.isalpha()) & (letter.upper() not in list(word)):
             if letter.upper() in mistakes:
                 draw_hangman(len(mistakes))
                 print('You already guessed ' + letter.upper())
-                print('You still have ' + str(chances) + ' guesses left \n')
+                single(chances)
             else:
                 mistakes.append(letter.upper())
                 draw_hangman(len(mistakes))
                 print('\n'+''.join(hidden)+'\n')
                 print('Sorry, ' + letter.upper() + ' is not in the word.')
                 chances -= 1
-                print('You now have ' + str(chances) + ' guesses left \n')
+                single(chances)
             
         else:
             print('Your input is invalid, try again. \n')
