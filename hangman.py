@@ -46,7 +46,7 @@ def game(word):
     words = ['JAZZ','BUZZED','ABRUPTLY','ABSURD','AWKWARD','BAGPIPES','BIKINI','BLIZZARD','BUFFALO','CYCLE','FAKING','FUNNY','GALAXY','KEPLER','GOSSIP','INJURY','JELLY','JUICY','JOGGING','KAYAK','KIOSK','LENGTH','LUCKY','LUXURY','MATRIX','OXYGEN','PAJAMA','PUPPY','QUIZZES','STRENGTH','SUBWAY','TRANSPLANT','TWELVE','SYNDROME','TRANSCRIPT','UNKNOWN','VAPORIZE','VODKA','WIZARD','ZIPPER','ZOMBIE','WHISKEY']
     word = random.choice(words)
 
-    print('Okay, this is your word! You have 10 guesses.')
+    print('Okay, this is your word! You have 6 guesses.')
     
     chances = 6
     progress = []
